@@ -1,0 +1,24 @@
+{
+  "name": "stack_project",
+  "version": "1.0.0",
+  "description": "ITC 134 SP20 Application Stack Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierrepnguyen/itc134-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pierrepnguyen/itc134-stack/issues"
+  },
+  "homepage": "https://github.com/pierrepnguyen/itc134-stack#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

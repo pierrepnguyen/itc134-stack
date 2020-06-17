@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Tutorial</title>
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <div class="row">
+      <h3>Express & Node with GCP Application Stack</h3>
+      <h6 class="right-align">Mwangi, Rodas, Hussein, Pierre</h6>
+      <hr>
+      <p class="center"><a href="index.ejs">Introduction</a> | <a href="#">Tutorial</a> | <a href="hello.ejs">"Hello World!"</a></p>
+    </div>
+    <!-- content -->
+    <div class="row">
+      <!-- create VM instance -->
+      <div class="col s7">
+        <h4>Creating VM Instance</h4>
+        <p class="indent">
+          1. Create your instance name to: helloworld-vm <br>
+          2. Boot disk: Google Debian GNU/Linux(default) <br>
+          3. Machine type: changed to small(1 shared vCPU, 1.7 GB memory) <br>
+          4. Check both HTTP & HTTPS boxes then create <br>
+          5. Go into Networking > VPC Network > Firewall <br>
+          6. Edit the rules for "default-allow-http" & "default-allow-https" adding port number 3000
+        </p>
+      </div>
+      <!-- VM pictures -->
+      <div class="col s5">
+        <!-- add pictures later tongiht PLEASE -->
+      </div>
+
+      <!-- installation -->
+      <h4>Install Node.js</h4>
+      <p class="indent">
+        1. Open up the shell by clicking SSH
+        2. $ sudo apt-get update <br>
+        3. $ sudo apt-get install -y nodejs <br>
+        4. $ sudo apt-get install npm <br>
+        5. Check if installations worked by using "node -v" & "npm -v"
+      </p>
+
+      <!-- starting project -->
+      <h4>Install Express</h4>
+      <p class="indent">
+        1. Initialize a package.json file with the following command: $ sudo npm init <br>
+        2. Add a start script to your package.json file: <br>
+          "script":{ <br>
+          &nbsp;&nbsp;"start": "node server.js"} <br>
+        3. Install Express.js: $ sudo npm install --save express
+      </p>
+
+      <!-- creating project/server -->
+      <h4>Code "Hello World!"</h4>
+      <p class="indent">
+        1. In the shell, create an server.js file with the following command: sudo vim server.js <br>
+        2. Insert the following content: <br>
+        const express = require('express'); <br>
+        const app = express(); <br>
+        app.get('/', (req, res) => { <br>
+          &nbsp;&nbsp;res.send('Hello World!'); <br>
+        }); <br><br>
+        app.listen(3000, function() { <br>
+          &nbsp;&nbsp;console.log("listening on port 3000"); <br>
+          &nbsp;&nbsp;console.log("close the server with ctrl + c or ^ + c"); <br>
+        });
+      </p>
+
+      <!-- Starting the server -->
+      <h4>Start Node server</h4>
+      <p class="indent">
+        1. Start the server with the command: $ node server.js 
+        2. Connect to it by clicking the VM's IP address and appending port 3000
+        3. TA DA!
+      </p>
+    </div>
+  </div>
+</body>
+</html>
